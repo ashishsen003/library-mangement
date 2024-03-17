@@ -3,7 +3,7 @@
 This project is a Node.js application with a GraphQL API that manages books and users. It includes authentication functionality using JSON Web Tokens (JWT) and features for adding, browsing.
 ### Deployed Link https://library-mangement-95lb.onrender.com
 
-### Presentation Video [https://library-mangement-95lb.onrender.com](https://drive.google.com/file/d/1oezDgLGb4lT6h71aPCe60vSLCjmfVZKV/view?usp=drive_link)
+### Presentation Video https://drive.google.com/file/d/1oezDgLGb4lT6h71aPCe60vSLCjmfVZKV/view?usp=drive_link
 
 ## Features
 
