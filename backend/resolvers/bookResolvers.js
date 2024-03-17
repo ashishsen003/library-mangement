@@ -28,7 +28,7 @@ const bookResolvers = {
     }
   },
   Mutation: {
-    async addBook(_, { addBookInput: { title, author } }, context) {
+    async addBook(_, { title, author } , context) {
       const user = authCheck(context);
 
       if (user.role !== "admin") {

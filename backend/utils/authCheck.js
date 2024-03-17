@@ -1,7 +1,7 @@
 import jwt from "jsonwebtoken";
 // import AuthenticatorError from '@apollo/server-express'
 
-export const authCheck = ()=>{
+export const authCheck = (context)=>{
     const authHeader = context.req.headers.authorization
     if(authHeader){
         const token = authHeader.split('Bearer ')[1]

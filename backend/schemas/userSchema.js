@@ -4,6 +4,7 @@ export const typeDefs = `#graphql
     username: String!
     email: String!
     role: String!
+    token: String!
   }
 
   input RegisterInput {
