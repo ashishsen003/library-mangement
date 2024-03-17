@@ -28,7 +28,7 @@ This project is a Node.js application with a GraphQL API that manages books and 
    ```npm install```
 
 ### Set up environment variables
-```Create a .env file in the project root and define the following variables```
+Create a .env file in the project root and define the following variables:
 ```PORT=4000```
 ```MONGODB_URI=<your-mongodb-uri>```
 ```JWT_SECRET=<your-jwt-secret>```
