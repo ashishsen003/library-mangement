@@ -1,7 +1,7 @@
 import {Book} from "../models/Book.js";
 import {User} from "../models/User.js";
 import { authCheck } from "../utils/authCheck.js";
-import { UserInputError } from "apollo-server-express";
+import { UserInputError } from "@apollo/server-express";
 
 const bookResolvers = {
   Query: {

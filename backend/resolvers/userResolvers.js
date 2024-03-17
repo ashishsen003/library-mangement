@@ -1,6 +1,6 @@
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
-import { UserInputError } from "apollo-server-express";
+import { UserInputError } from "@apollo/server-express";
 import { User } from "../models/User.js";
 import { validateLoginInput, validateRegisterInput } from "../utils/validateUser.js";
 

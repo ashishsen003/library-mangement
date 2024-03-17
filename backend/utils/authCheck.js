@@ -1,5 +1,5 @@
-import {jwt} from 'jsonwebtoken'
-import AuthenticatorError from 'apollo-server-express'
+import jwt from "jsonwebtoken";
+import AuthenticatorError from '@apollo/server-express'
 
 export const authCheck = ()=>{
     const authHeader = context.req.headers.authorization
