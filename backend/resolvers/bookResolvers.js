@@ -1,28 +1,41 @@
 import {Book} from "../models/Book.js";
 import {User} from "../models/User.js";
-// import { UserInputError } from "apollo-server-express";
+import { authCheck } from "../utils/authCheck.js";
+import { UserInputError } from "apollo-server-express";
 
 const bookResolvers = {
   Query: {
-    books: async () => {
+    async getBooks() {
       try {
         const books = await Book.find()
-        // .populate("owner");
         return books;
       } catch (err) {
         throw new Error(err);
       }
     },
+
+    async getBook(_, {bookId}) {
+      try {
+        const book = await book.findById(bookId)
+        if(book){
+          return book
+        } else {
+          throw new Error('Book not found')
+        }
+      } catch (error) {
+        throw new Error(error)
+      }
+    }
   },
   Mutation: {
-    addBook: async (_, { addBookInput: { title, author } }, context) => {
-      const user = checkAuth(context);
+    async addBook(_, { addBookInput: { title, author } }, context) {
+      const user = authCheck(context);
 
       if (user.role !== "admin") {
         throw new Error("Only admin can add books");
       }
 
-      const book = new Book({
+      const newbook = new Book({
         title,
         author,
         owner: user.id, 
@@ -30,7 +43,7 @@ const bookResolvers = {
       });
 
       try {
-        const res = await book.save();
+        const res = await newbook.save();
         return res;
       } catch (err) {
         throw new Error(err);

@@ -8,14 +8,16 @@ export const typeDefs = `#graphql
   }
 
   type Query {
-    # allBooks: [Book!]!
-    books: [Book!]!
+    getBooks: [Book!]!
+    getBook(BookId: ID!): Book
   }
 
   type Mutation {
     addBook(title: String!, author: String!): Book!
-    borrowBook(bookId: ID!): Book!
-    buyBook(bookId: ID!): Book!
-    approveBorrowRequest(requestId: ID!): Book!
+    deleteBook(bookId: ID!): String!
+
+    # borrowBook(bookId: ID!): Book!
+    # buyBook(bookId: ID!): Book!
+    # approveBorrowRequest(requestId: ID!): Book!
   }
 `;
