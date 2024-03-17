@@ -1,5 +1,5 @@
 import jwt from "jsonwebtoken";
-import AuthenticatorError from '@apollo/server-express'
+// import AuthenticatorError from '@apollo/server-express'
 
 export const authCheck = ()=>{
     const authHeader = context.req.headers.authorization
@@ -10,7 +10,7 @@ export const authCheck = ()=>{
                 const user = jwt.verfiy(token, process.env.ADMIN)
                 return user
             } catch (error) {
-                throw new AuthenticatorError('Innvalid or Expired token')
+                throw new Error('Invalid or Expired token')
             }
         }
         throw new Error("Authentication token should be \ 'Bearer [token]")

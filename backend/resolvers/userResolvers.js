@@ -1,6 +1,6 @@
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
-import { UserInputError } from "@apollo/server-express";
+// import { UserInputError } from "@apollo/server-express";
 import { User } from "../models/User.js";
 import { validateLoginInput, validateRegisterInput } from "../utils/validateUser.js";
 
@@ -13,12 +13,12 @@ const userResolvers = {
         password
       );
       if (!valid) {
-        throw new UserInputError("Errors", { errors });
+        throw new Error("Errors", { errors });
       }
 
       const user = await User.findOne({ email });
       if (user) {
-        throw new UserInputError("Email already exits", {
+        throw new Error("Email already exits", {
           errors: {
             email: "This email already in use",
           },
@@ -39,21 +39,21 @@ const userResolvers = {
     async login(_, { loginInput: { email, password } }) {
       const { valid, errors } = validateLoginInput(email, password);
         if(!valid){
-            throw new UserInputError("Errors", { errors });
+            throw new Error("Errors", { errors });
         }
 
       const user = await User.findOne({ email });
 
       if (!user) {
         errors.general = "User not found";
-        throw new UserInputError("User not found", { errors });
+        throw new Error("User not found", { errors });
       }
 
       const match = await bcrypt.compare(password, user.password);
 
       if (!match) {
         errors.general = "Wrong credentails";
-        throw new UserInputError("Wrong credentials", { errors });
+        throw new Error("Wrong credentials", { errors });
       }
 
       const token = jwt.sign({ id: user.id }, process.env.USER);
