@@ -1,19 +1,13 @@
 # Book Management System with GraphQL API
 
-This project is a Node.js application with a GraphQL API that manages books and users. It includes authentication functionality using JSON Web Tokens (JWT) and features for adding, browsing, and requesting books.
+This project is a Node.js application with a GraphQL API that manages books and users. It includes authentication functionality using JSON Web Tokens (JWT) and features for adding, browsing.
 ### Deployed Link https://library-mangement-95lb.onrender.com
 
 ### Presentation Video [https://library-mangement-95lb.onrender.com](https://drive.google.com/file/d/1oezDgLGb4lT6h71aPCe60vSLCjmfVZKV/view?usp=drive_link)
 
 ## Features
 
-- User authentication (registration, login, logout)
-- Role-based access control (admin, regular user)
-- Book management:
-  - Admins can add new books to the library
-  - Users can browse and search for available books
-  - Users can borrow or buy books from the library
-  - Request handling for borrowing books from other users
+- User authentication (registration, login)
 
 ## Technologies Used
 
@@ -22,7 +16,6 @@ This project is a Node.js application with a GraphQL API that manages books and 
 - GraphQL
 - MongoDB (with Mongoose)
 - JSON Web Tokens (JWT)
-- Apollo Server Express
 - bcrypt (for password hashing)
 - Other npm packages (check package.json for details)
 
@@ -48,7 +41,6 @@ npm start
 Access the GraphQL Playground at http://localhost:4000/graphql to interact with the API.
 Register a new user using the register mutation.
 Log in with the registered user using the login mutation to obtain a JWT token.
-Use the token in the Authorization header (Bearer token) for authenticated requests.
 Explore and execute queries and mutations to manage users and books.
 
 ### API Documentation
