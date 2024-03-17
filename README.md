@@ -21,22 +21,20 @@ This project is a Node.js application with a GraphQL API that manages books and 
 
 ## Setup
 
-1. **Clone the repository:**
-
-   ```bash
-   git clone https://github.com/ashishsen003/library-mangement
+### Clone the repository
+   ```git clone https://github.com/ashishsen003/library-mangement```
    
 ### Install dependencies:
    ```npm install```
 
-### Set up environment variables:
-```Create a .env file in the project root and define the following variables:
-PORT=4000
-MONGODB_URI=<your-mongodb-uri>
-JWT_SECRET=<your-jwt-secret>```
+### Set up environment variables
+```Create a .env file in the project root and define the following variables```
+```PORT=4000```
+```MONGODB_URI=<your-mongodb-uri>```
+```JWT_SECRET=<your-jwt-secret>```
 
 ### Start the server:
-npm start
+```npm start```
 
 ### Usage
 Access the GraphQL Playground at http://localhost:4000/graphql to interact with the API.
